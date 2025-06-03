@@ -8,14 +8,23 @@ import os
 
 EATD_BASE_PATH = 'F:/EATD-Corpus/EATD-Corpus' 
 
-# Output directory for all processed EATD data
+# Output directory for all processed data
 PROCESSED_DATA_OUTPUT_DIR = 'F:/EATD-Corpus/processed_data_eatd'
 
+# Filename for the JSON output from main_preprocess_eatd.py
 PROCESSED_EATD_JSON_FILENAME = 'processed_eatd_interviews_qa.json'
 
 AUDIO_FEATURES_EATD_DIR_NAME = 'audio_features_xlsr53_eatd' 
+PROCESSED_EATD_JSON_WITH_AUDIO_FEATURES_FILENAME = 'processed_eatd_interviews_qa_with_audio_features.json'
 
-PROCESSED_EATD_JSON_WITH_FEATURES_FILENAME = 'processed_eatd_interviews_qa_with_audio_features.json'
+TEXT_FEATURES_EATD_DIR_NAME = 'text_features_xlmr_eatd' 
+
+PROCESSED_EATD_JSON_WITH_ALL_FEATURES_FILENAME = 'processed_eatd_interviews_qa_with_all_features.json'
+
+
+XLM_R_MODEL_NAME = "xlm-roberta-base" 
+XLM_R_MAX_LENGTH = 128 
+
 
 if not os.path.exists(PROCESSED_DATA_OUTPUT_DIR):
     try:
@@ -29,4 +38,3 @@ elif not os.path.isdir(PROCESSED_DATA_OUTPUT_DIR):
 if not os.path.isdir(EATD_BASE_PATH):
     print(f"WARNING: The specified EATD_BASE_PATH does not exist or is not a directory: {EATD_BASE_PATH}")
     print("Please ensure the path in config_eatd.py is correct.")
-
